@@ -15,8 +15,22 @@ function additem(e)
     alert("both fields required")
   }
   else
-  localStorage.setItem(name.value,email.value);
+  {
+    let userdetails = {
+       name:name.value,
+       email:email.value  
+     }
 
+   //to convert object into string 
+     let userserial=JSON.stringify(userdetails);
+     console.log(userserial);
+
+     localStorage.setItem(name,userserial);
+  // deserializing to use the created object
+     let userdesserail=JSON.parse(localStorage.getItem(name))
+     console.log(userdesserail)
+   }
+   
   name.value="";
   email.value="";
 
