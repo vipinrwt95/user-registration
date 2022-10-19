@@ -7,6 +7,7 @@ function additem(e)
 { 
   e.preventDefault();
 
+  let target=document.getElementById('users');
   let name=document.getElementById('name');
   let email=document.getElementById('email');
 
@@ -20,7 +21,7 @@ function additem(e)
        name:name.value,
        email:email.value  
      }
-
+     
    //to convert object into string 
      let userserial=JSON.stringify(userdetails);
      //console.log(userserial);
@@ -37,12 +38,19 @@ function additem(e)
     details.appendChild(info);
     details.appendChild(space);
     details.appendChild(emailinfo);
-    let target=document.getElementById('users');
+    
     console.log(target);
     target.appendChild(details);
 
     }
    
+
+ let deletebutton=document.createElement('button');
+deletebutton.id="delete";
+let del =  document.createTextNode("DELETE");
+deletebutton.appendChild(del);
+console.log(target)
+target.appendChild(deletebutton);
    
 
 
@@ -50,3 +58,7 @@ function additem(e)
   email.value="";
 
 }
+
+
+
+
