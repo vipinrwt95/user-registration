@@ -23,14 +23,29 @@ function additem(e)
 
    //to convert object into string 
      let userserial=JSON.stringify(userdetails);
-     console.log(userserial);
+     //console.log(userserial);
 
      localStorage.setItem(name,userserial);
   // deserializing to use the created object
-     let userdesserail=JSON.parse(localStorage.getItem(name))
-     console.log(userdesserail)
-   }
+     let userdeserial=JSON.parse(localStorage.getItem(name))
+     console.log(userdeserial)
+    let details=document.createElement('li');
+    FileList.id="info";
+    let info=document.createTextNode(userdeserial.name);
+    let space=document.createTextNode("  ");
+    let emailinfo=document.createTextNode(userdeserial.email);
+    details.appendChild(info);
+    details.appendChild(space);
+    details.appendChild(emailinfo);
+    let target=document.getElementById('users');
+    console.log(target);
+    target.appendChild(details);
+
+    }
    
+   
+
+
   name.value="";
   email.value="";
 
